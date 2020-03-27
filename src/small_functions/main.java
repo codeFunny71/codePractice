@@ -5,19 +5,29 @@ import java.util.Scanner;
 public class main {
     public static void main(String[] args) {
 
-        //Compute the volume of a cylinder
+
+        //Convert feet into meters
 
         Scanner input = new Scanner(System.in);
 
-        System.out.print("Enter the radius and the length of a cylinder: ");
-        double radius = input.nextDouble();
-        double length = input.nextDouble();
+        System.out.print("Enter a value for feet: ");
+        double feet = input.nextDouble();
+        double meters = feet * 0.305;
+        System.out.println(feet + " feet is " + meters + " meters");
 
-        double area = radius * radius * 3.14159265359;
-        double volume = area * length;
+        //Compute the volume of a cylinder
 
-        System.out.println("The area is " + area);
-        System.out.println("The volume is " + volume);
+//        Scanner input = new Scanner(System.in);
+
+//        System.out.print("Enter the radius and the length of a cylinder: ");
+//        double radius = input.nextDouble();
+//        double length = input.nextDouble();
+//
+//        double area = radius * radius * 3.14159265359;
+//        double volume = area * length;
+//
+//        System.out.println("The area is " + area);
+//        System.out.println("The volume is " + volume);
 
         //Convert Celsius to Fahrenheit
 
