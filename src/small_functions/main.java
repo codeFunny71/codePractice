@@ -21,24 +21,33 @@ public class main {
         return true;
     }
 
+    public static double area(double radius) {
+        return Math.PI * radius * radius;
+    }
+
     public static void main(String[] args) {
+
+        //calculate area
+        int radius = 5;
+        double result = main.area(radius);
+        System.out.println("Your area is " + result);
 
         //admissions filter
 
-        Scanner console = new Scanner(System.in);
-
-        System.out.println("University admission program");
-        System.out.print("What is your GPA? ");
-        double GPA = console.nextDouble();
-        System.out.print("What is your SAT score? ");
-        int SAT = console.nextInt();
-        if (GPA < 1.8) {
-            System.out.println("Your GPA is too low.");
-        } else if (SAT < 900) {
-            System.out.println("Your SAT score is too low.");
-        } else {
-            System.out.println("You were accepted!");
-        }
+//        Scanner console = new Scanner(System.in);
+//
+//        System.out.println("University admission program");
+//        System.out.print("What is your GPA? ");
+//        double GPA = console.nextDouble();
+//        System.out.print("What is your SAT score? ");
+//        int SAT = console.nextInt();
+//        if (GPA < 1.8) {
+//            System.out.println("Your GPA is too low.");
+//        } else if (SAT < 900) {
+//            System.out.println("Your SAT score is too low.");
+//        } else {
+//            System.out.println("You were accepted!");
+//        }
 
         //palindrome
 
