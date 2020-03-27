@@ -25,12 +25,21 @@ public class main {
         return Math.PI * radius * radius;
     }
 
+    public static int[] countLastDigits(int[] list){
+        int[] count = new int[10];
+        for (int i = 0; i < list.length; i++){
+            count[list[i] % 10] = count[list[i] % 10]+1;
+        }
+        return count;
+    }
+
+
     public static void main(String[] args) {
 
         //calculate area
-        int radius = 5;
-        double result = main.area(radius);
-        System.out.println("Your area is " + result);
+//        int radius = 5;
+//        double result = main.area(radius);
+//        System.out.println("Your area is " + result);
 
         //admissions filter
 
