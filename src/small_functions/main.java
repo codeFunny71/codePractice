@@ -1,6 +1,8 @@
 package small_functions;
 
+import java.util.Arrays;
 import java.util.Scanner;
+import java.util.stream.Stream;
 
 public class main {
 
@@ -52,10 +54,66 @@ public class main {
         System.out.println("Pennies: " + pennies);
     }
 
+    public static int[] mergeArrays(int[] myArray, int[] alicesArray) {
+
+        // set up our mergedArray
+        int[] mergedArray = new int[myArray.length + alicesArray.length];
+
+        int currentIndexAlices = 0;
+        int currentIndexMine   = 0;
+        int currentIndexMerged = 0;
+
+        while (currentIndexMerged < mergedArray.length) {
+
+            boolean isMyArrayExhausted = currentIndexMine >= myArray.length;
+            boolean isAlicesArrayExhausted = currentIndexAlices >= alicesArray.length;
+
+            // case: next comes from my array
+            // my array must not be exhausted, and EITHER:
+            // 1) Alice's array IS exhausted, or
+            // 2) the current element in my array is less
+            //    than the current element in Alice's array
+            if (!isMyArrayExhausted && (isAlicesArrayExhausted
+                    || (myArray[currentIndexMine] < alicesArray[currentIndexAlices]))) {
+
+                mergedArray[currentIndexMerged] = myArray[currentIndexMine];
+                currentIndexMine++;
+
+                // case: next comes from Alice's array
+            } else {
+                mergedArray[currentIndexMerged] = alicesArray[currentIndexAlices];
+                currentIndexAlices++;
+            }
+
+            currentIndexMerged++;
+        }
+
+        return mergedArray;
+    }
 
     public static void main(String[] args) {
 
-        
+
+        //merge 2 arrays as one sorted array
+//        int[] myArray = new int[]{3, 4, 6, 10, 11, 15};
+//        int[] alicesArray = new int[]{1, 5, 8, 12, 14, 19};
+//
+//        int[] result = mergeArrays(myArray, alicesArray);
+//        System.out.println(Arrays.toString(result));
+
+//        Stream<int[]> a1Stream = Stream.of(myArray);
+//        Stream<int[]> a2Stream = Stream.of(alicesArray);
+//
+//        Stream<int[]> finalArray = Stream.concat(a1Stream, a2Stream).sorted();
+//        finalArray.forEach(System.out::println);
+
+//        Scanner input = new Scanner(System.in);
+//        System.out.print("Enter a number in pounds: ");
+//
+//        double pounds = input.nextDouble();
+//        double kilograms = pounds * 0.454;
+//
+//        System.out.println(pounds + " pounds is " + kilograms + " kilograms.");
 
 //        double change = 7.59;
 //        main.makeChange(change);
