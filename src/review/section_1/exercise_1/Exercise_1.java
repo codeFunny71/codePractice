@@ -1,4 +1,4 @@
-package review.section_1;
+package review.section_1.exercise_1;
 
 public class Exercise_1 {
 
@@ -26,11 +26,26 @@ public class Exercise_1 {
         double pi = 4.0 * (1 - (1.0/3) + (1.0/5) - (1.0/7) + (1.0/9) - (1.0/11));
         System.out.println(pi);
 
-        double perimeter = 2 * radius * Math.PI;
-        double area = radius * radius * Math.PI;
+//        double perimeter = 2 * radius * Math.PI;
+//        double area = radius * radius * Math.PI;
 
-        System.out.println("Perimeter = " + perimeter);
-        System.out.println("Area = " + area);
+//        System.out.println("Perimeter = " + perimeter);
+//        System.out.println("Area = " + area);
+
+        final double width = 4.5;
+        final double height = 7.9;
+
+        double area = width * height;
+
+        System.out.printf("%.1f * %.1f = %.2f", width, height, area);
+
+        double kilometers = 14.0;
+        double miles = kilometers / 1.6;
+
+        double rate = (45.5 * 60.0 + 30.0) / (60.0 * 60.0);
+        double milesPerHour = miles / rate;
+
+        System.out.println(milesPerHour);
 
     }
 }
